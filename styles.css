@@ -1,0 +1,395 @@
+/* ============================================
+   PORTFOLIO — Premium Design System
+   ============================================ */
+
+/* ---- Base ---- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---- Custom Properties ---- */
+:root {
+    --primary: #6366f1;
+    --primary-glow: rgba(99, 102, 241, 0.4);
+    --secondary: #ec4899;
+    --secondary-glow: rgba(236, 72, 153, 0.4);
+    --bg: #020617;
+    --surface: rgba(15, 23, 42, 0.45);
+    --border: rgba(255, 255, 255, 0.06);
+    --text-dim: #94a3b8;
+}
+
+/* ---- Glassmorphism Panel ---- */
+.glass-panel {
+    background: var(--surface);
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    border: 1px solid var(--border);
+}
+
+/* ---- Particle Canvas ---- */
+#particles-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+}
+
+/* ---- Custom Cursor Glow ---- */
+.cursor-glow {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(99,102,241,0.07) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    will-change: left, top;
+}
+
+/* ---- Skill Tags ---- */
+.skill-tag {
+    font-size: 0.75rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    padding: 0.3rem 0.85rem;
+    border-radius: 9999px;
+    background: rgba(99, 102, 241, 0.08);
+    color: #a5b4fc;
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+}
+
+.skill-tag:hover {
+    background: rgba(99, 102, 241, 0.25);
+    color: #c7d2fe;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+}
+
+/* ---- Navbar ---- */
+.navbar-scrolled {
+    background: rgba(2, 6, 23, 0.85) !important;
+    backdrop-filter: blur(16px) saturate(1.2);
+    -webkit-backdrop-filter: blur(16px) saturate(1.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* Nav link hover underline */
+.nav-link {
+    position: relative;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 2px;
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ---- Hero Typing Cursor ---- */
+.typed-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background: var(--primary);
+    margin-left: 4px;
+    animation: blink 1s step-end infinite;
+    vertical-align: text-bottom;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* ---- Hero Gradient Text ---- */
+.gradient-text {
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 40%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ---- Animated Border Glow for Cards ---- */
+.glow-card {
+    position: relative;
+    overflow: hidden;
+}
+.glow-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, transparent 40%, var(--primary) 50%, var(--secondary) 60%, transparent 70%);
+    background-size: 300% 300%;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    animation: borderRotate 4s linear infinite paused;
+    pointer-events: none;
+}
+.glow-card:hover::before {
+    opacity: 1;
+    animation-play-state: running;
+}
+
+@keyframes borderRotate {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ---- Animations ---- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-12px); }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* ---- Scroll Reveal ---- */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.85);
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-scale.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ---- Status Badge Pulse ---- */
+.status-pulse {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #22c55e;
+    position: relative;
+}
+.status-pulse::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    background: rgba(34, 197, 94, 0.4);
+    animation: pulse-ring 2s ease-out infinite;
+}
+@keyframes pulse-ring {
+    0%   { transform: scale(1); opacity: 1; }
+    100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* ---- Section Divider Gradient ---- */
+.section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(99,102,241,0.3), rgba(236,72,153,0.3), transparent);
+}
+
+/* ---- Project Card Tilt ---- */
+.tilt-card {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+}
+.tilt-card:hover {
+    box-shadow: 0 20px 60px -15px rgba(99, 102, 241, 0.15);
+}
+
+/* ---- Stats Counter ---- */
+.stat-number {
+    font-variant-numeric: tabular-nums;
+}
+
+/* ---- Custom Scrollbar ---- */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #020617; }
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #1e293b, #334155);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #334155, #475569);
+}
+
+/* ---- Blob animation delays ---- */
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
+
+/* ---- Smooth scroll offset for fixed nav ---- */
+html {
+    scroll-padding-top: 80px;
+}
+
+/* =======================================
+   RESPONSIVE DESIGN
+   ======================================= */
+
+/* ---- Extra Small (phones, < 480px) ---- */
+@media (max-width: 480px) {
+    .cursor-glow { display: none; }
+
+    section { padding-left: 1rem; padding-right: 1rem; }
+
+    h1 { font-size: 2.5rem !important; }
+    h2 { font-size: 1.5rem !important; }
+
+    .glass-panel { backdrop-filter: blur(10px); }
+
+    /* Hero */
+    #home h1 { font-size: 2.5rem !important; line-height: 1.15; }
+    #home h2 { font-size: 1.4rem !important; }
+    #home p { font-size: 0.95rem !important; }
+
+    /* Stats grid */
+    .stat-number { font-size: 1.25rem !important; }
+
+    /* Skill cards */
+    .skill-tag { font-size: 0.65rem; padding: 0.2rem 0.6rem; }
+
+    /* Contact cards */
+    #contact .grid { grid-template-columns: 1fr !important; }
+
+    /* Project card links */
+    .tilt-card { transform: none !important; }
+
+    /* Nav */
+    nav .max-w-6xl { padding-left: 1rem; padding-right: 1rem; }
+}
+
+/* ---- Small (large phones / small tablets, 481-768px) ---- */
+@media (min-width: 481px) and (max-width: 768px) {
+    .cursor-glow { display: none; }
+
+    section { padding-left: 1.5rem; padding-right: 1.5rem; }
+
+    #home h1 { font-size: 3.2rem !important; }
+    #home h2 { font-size: 1.6rem !important; }
+
+    /* 2-column skill grid on tablets */
+    #skills .grid { grid-template-columns: repeat(2, 1fr) !important; }
+    #skills .lg\:col-span-2 { grid-column: span 2 !important; }
+
+    /* Contact cards 2 columns */
+    #contact .grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+    /* Disable tilt on touch */
+    .tilt-card { transform: none !important; }
+}
+
+/* ---- Medium (tablets / small laptops, 769-1024px) ---- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .cursor-glow { width: 400px; height: 400px; }
+
+    #home h1 { font-size: 4.5rem !important; }
+
+    section .max-w-5xl { max-width: 90%; }
+
+    /* Slightly smaller blobs */
+    .fixed .animate-blob { width: 300px !important; height: 300px !important; }
+}
+
+/* ---- Large (desktops 1025-1440px) ---- */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    section .max-w-5xl { max-width: 960px; }
+}
+
+/* ---- Extra Large (wide screens > 1440px) ---- */
+@media (min-width: 1441px) {
+    section .max-w-5xl { max-width: 1100px; }
+    #home h1 { font-size: 6rem !important; }
+}
+
+/* ---- Touch Device Improvements ---- */
+@media (hover: none) {
+    .glow-card::before { display: none; }
+    .tilt-card { transform: none !important; }
+    .cursor-glow { display: none; }
+    .nav-link::after { display: none; }
+    .skill-tag:hover { transform: none; }
+}
+
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    .reveal, .reveal-left, .reveal-right, .reveal-scale {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    .animate-fade-in-up { opacity: 1 !important; }
+}
