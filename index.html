@@ -18,6 +18,9 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Devicon (technology logos) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 
@@ -300,83 +303,196 @@
                 <div class="h-[1px] bg-gradient-to-r from-white/10 to-transparent flex-grow"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Languages -->
-                <div
-                    class="glass-panel p-7 rounded-2xl border border-white/5 glow-card tilt-card hover:-translate-y-2 transition-all duration-400">
-                    <div
-                        class="w-12 h-12 bg-primary/15 rounded-xl flex items-center justify-center text-primary mb-6 text-xl">
-                        <i class="fa-solid fa-code"></i>
+            <!-- ── Category: Languages ── -->
+            <div class="mb-12">
+                <h3 class="text-sm font-mono text-primary uppercase tracking-[0.2em] mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-code text-xs"></i> Languages
+                    <span class="h-[1px] bg-primary/20 flex-grow"></span>
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    <!-- Java -->
+                    <div class="skill-card" data-color="237, 86, 49" style="--skill-color: #ed5631;">
+                        <div class="skill-card-inner">
+                            <div class="skill-card-glow"></div>
+                            <i class="devicon-java-plain colored skill-icon"></i>
+                            <span class="skill-name">Java</span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Languages</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">SQL</span>
+                    <!-- JavaScript -->
+                    <div class="skill-card" data-color="247, 223, 30" style="--skill-color: #f7df1e;">
+                        <div class="skill-card-inner">
+                            <div class="skill-card-glow"></div>
+                            <i class="devicon-javascript-plain colored skill-icon"></i>
+                            <span class="skill-name">JavaScript</span>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Frameworks -->
-                <div
-                    class="glass-panel p-7 rounded-2xl border border-white/5 glow-card tilt-card hover:-translate-y-2 transition-all duration-400">
-                    <div
-                        class="w-12 h-12 bg-secondary/15 rounded-xl flex items-center justify-center text-secondary mb-6 text-xl">
-                        <i class="fa-brands fa-react"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Frameworks</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">ReactJS</span>
-                        <span class="skill-tag">NodeJS</span>
-                        <span class="skill-tag">ExpressJS</span>
-                    </div>
-                </div>
-
-                <!-- Databases -->
-                <div
-                    class="glass-panel p-7 rounded-2xl border border-white/5 glow-card tilt-card hover:-translate-y-2 transition-all duration-400">
-                    <div
-                        class="w-12 h-12 bg-accent/15 rounded-xl flex items-center justify-center text-accent mb-6 text-xl">
-                        <i class="fa-solid fa-database"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Databases</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">DBMS</span>
+                    <!-- SQL -->
+                    <div class="skill-card" data-color="0, 117, 143" style="--skill-color: #00758f;">
+                        <div class="skill-card-inner">
+                            <div class="skill-card-glow"></div>
+                            <i class="devicon-azuresqldatabase-plain skill-icon" style="color: #00758f;"></i>
+                            <span class="skill-name">SQL</span>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Developer Tools -->
-                <div
-                    class="glass-panel p-7 rounded-2xl border border-white/5 glow-card tilt-card hover:-translate-y-2 transition-all duration-400">
-                    <div
-                        class="w-12 h-12 bg-green-500/15 rounded-xl flex items-center justify-center text-green-400 mb-6 text-xl">
-                        <i class="fa-solid fa-toolbox"></i>
+            <!-- ── Category: Frameworks & Libraries ── -->
+            <div class="mb-12">
+                <h3 class="text-sm font-mono text-secondary uppercase tracking-[0.2em] mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-layer-group text-xs"></i> Frameworks & Libraries
+                    <span class="h-[1px] bg-secondary/20 flex-grow"></span>
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    <!-- React -->
+                    <div class="skill-card" data-color="97, 218, 251" style="--skill-color: #61dafb;">
+                        <div class="skill-card-inner">
+                            <div class="skill-card-glow"></div>
+                            <i class="devicon-react-original colored skill-icon"></i>
+                            <span class="skill-name">React</span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Developer Tools</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">GitHub</span>
-                        <span class="skill-tag">Postman</span>
-                        <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">Vercel</span>
+                    <!-- Node.js -->
+                    <div class="skill-card" data-color="104, 160, 99" style="--skill-color: #68a063;">
+                        <div class="skill-card-inner">
+                            <div class="skill-card-glow"></div>
+                            <i class="devicon-nodejs-plain colored skill-icon"></i>
+                            <span class="skill-name">Node.js</span>
+                        </div>
+                    </div>
+                    <!-- Express -->
+                    <div class="skill-card" data-color="160, 160, 160" style="--skill-color: #a0a0a0;">
+                        <div class="skill-card-inner">
+                            <div class="skill-card-glow"></div>
+                            <i class="devicon-express-original skill-icon" style="color: #a0a0a0;"></i>
+                            <span class="skill-name">Express</span>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Core Concepts -->
-                <div
-                    class="glass-panel p-7 rounded-2xl border border-white/5 glow-card tilt-card hover:-translate-y-2 transition-all duration-400 lg:col-span-2">
-                    <div
-                        class="w-12 h-12 bg-orange-500/15 rounded-xl flex items-center justify-center text-orange-400 mb-6 text-xl">
-                        <i class="fa-solid fa-lightbulb"></i>
+            <!-- ── Category: Databases ── -->
+            <div class="mb-12">
+                <h3 class="text-sm font-mono text-accent uppercase tracking-[0.2em] mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-database text-xs"></i> Databases
+                    <span class="h-[1px] bg-accent/20 flex-grow"></span>
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    <!-- MySQL -->
+                    <div class="skill-card" data-color="0, 117, 143" style="--skill-color: #00758f;">
+                        <div class="skill-card-inner">
+                            <div class="skill-card-glow"></div>
+                            <i class="devicon-mysql-plain colored skill-icon"></i>
+                            <span class="skill-name">MySQL</span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Core Concepts</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">REST APIs</span>
-                        <span class="skill-tag">OOP</span>
-                        <span class="skill-tag">Collections</span>
-                        <span class="skill-tag">Multithreading</span>
-                        <span class="skill-tag">JWT Auth</span>
+                    <!-- PostgreSQL -->
+                    <div class="skill-card" data-color="51, 103, 145" style="--skill-color: #336791;">
+                        <div class="skill-card-inner">
+                            <div class="skill-card-glow"></div>
+                            <i class="devicon-postgresql-plain colored skill-icon"></i>
+                            <span class="skill-name">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── Category: Developer Tools ── -->
+            <div class="mb-12">
+                <h3 class="text-sm font-mono text-green-400 uppercase tracking-[0.2em] mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-toolbox text-xs"></i> Developer Tools
+                    <span class="h-[1px] bg-green-500/20 flex-grow"></span>
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                    <!-- Git -->
+                    <div class="skill-card" data-color="240, 80, 51" style="--skill-color: #f05033;">
+                        <div class="skill-card-inner">
+                            <div class="skill-card-glow"></div>
+                            <i class="devicon-git-plain colored skill-icon"></i>
+                            <span class="skill-name">Git</span>
+                        </div>
+                    </div>
+                    <!-- GitHub -->
+                    <div class="skill-card" data-color="200, 200, 200" style="--skill-color: #c8c8c8;">
+                        <div class="skill-card-inner">
+                            <div class="skill-card-glow"></div>
+                            <i class="devicon-github-original skill-icon" style="color: #c8c8c8;"></i>
+                            <span class="skill-name">GitHub</span>
+                        </div>
+                    </div>
+                    <!-- Postman -->
+                    <div class="skill-card" data-color="255, 108, 55" style="--skill-color: #ff6c37;">
+                        <div class="skill-card-inner">
+                            <div class="skill-card-glow"></div>
+                            <i class="devicon-postman-plain colored skill-icon"></i>
+                            <span class="skill-name">Postman</span>
+                        </div>
+                    </div>
+                    <!-- VS Code -->
+                    <div class="skill-card" data-color="0, 120, 215" style="--skill-color: #0078d7;">
+                        <div class="skill-card-inner">
+                            <div class="skill-card-glow"></div>
+                            <i class="devicon-vscode-plain colored skill-icon"></i>
+                            <span class="skill-name">VS Code</span>
+                        </div>
+                    </div>
+                    <!-- Vercel -->
+                    <div class="skill-card" data-color="200, 200, 200" style="--skill-color: #c8c8c8;">
+                        <div class="skill-card-inner">
+                            <div class="skill-card-glow"></div>
+                            <i class="devicon-vercel-original skill-icon" style="color: #c8c8c8;"></i>
+                            <span class="skill-name">Vercel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── Category: Core Concepts ── -->
+            <div>
+                <h3 class="text-sm font-mono text-orange-400 uppercase tracking-[0.2em] mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-lightbulb text-xs"></i> Core Concepts
+                    <span class="h-[1px] bg-orange-500/20 flex-grow"></span>
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                    <!-- REST APIs -->
+                    <div class="skill-card" data-color="99, 102, 241" style="--skill-color: #6366f1;">
+                        <div class="skill-card-inner">
+                            <div class="skill-card-glow"></div>
+                            <i class="fa-solid fa-plug skill-icon-fa" style="color: #6366f1;"></i>
+                            <span class="skill-name">REST APIs</span>
+                        </div>
+                    </div>
+                    <!-- OOP -->
+                    <div class="skill-card" data-color="168, 85, 247" style="--skill-color: #a855f7;">
+                        <div class="skill-card-inner">
+                            <div class="skill-card-glow"></div>
+                            <i class="fa-solid fa-cubes skill-icon-fa" style="color: #a855f7;"></i>
+                            <span class="skill-name">OOP</span>
+                        </div>
+                    </div>
+                    <!-- Collections -->
+                    <div class="skill-card" data-color="236, 72, 153" style="--skill-color: #ec4899;">
+                        <div class="skill-card-inner">
+                            <div class="skill-card-glow"></div>
+                            <i class="fa-solid fa-list skill-icon-fa" style="color: #ec4899;"></i>
+                            <span class="skill-name">Collections</span>
+                        </div>
+                    </div>
+                    <!-- Multithreading -->
+                    <div class="skill-card" data-color="34, 197, 94" style="--skill-color: #22c55e;">
+                        <div class="skill-card-inner">
+                            <div class="skill-card-glow"></div>
+                            <i class="fa-solid fa-gears skill-icon-fa" style="color: #22c55e;"></i>
+                            <span class="skill-name">Multithreading</span>
+                        </div>
+                    </div>
+                    <!-- JWT Auth -->
+                    <div class="skill-card" data-color="251, 191, 36" style="--skill-color: #fbbf24;">
+                        <div class="skill-card-inner">
+                            <div class="skill-card-glow"></div>
+                            <i class="fa-solid fa-shield-halved skill-icon-fa" style="color: #fbbf24;"></i>
+                            <span class="skill-name">JWT Auth</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -612,14 +728,16 @@
                 question or just want to say hi, I'll try my best to get back to you!
             </p>
 
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=manipolamuri6@gmail.com" target="_blank"
+            <a href="mailto:manipolamuri6@gmail.com"
+                onclick="handleEmail(event)"
                 class="inline-flex items-center gap-2.5 px-10 py-5 rounded-full bg-gradient-to-r from-primary via-accent to-secondary text-white font-semibold text-lg hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 transition-all duration-300 mb-16">
                 <i class="fa-solid fa-paper-plane"></i> Say Hello
             </a>
 
             <!-- Contact Cards -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=manipolamuri6@gmail.com" target="_blank"
+                <a href="mailto:manipolamuri6@gmail.com"
+                    onclick="handleEmail(event)"
                     class="contact-card glass-panel p-6 rounded-2xl border border-white/5 glow-card flex flex-col items-center gap-3 hover:border-primary/30 transition-all duration-300 group">
                     <div
                         class="w-14 h-14 bg-primary/15 rounded-2xl flex items-center justify-center text-primary text-xl group-hover:scale-110 transition-transform">
@@ -673,7 +791,8 @@
             <a href="https://www.linkedin.com/in/shanmukhamanikantapolamuri" target="_blank"
                 class="text-slate-500 hover:text-blue-400 transition-colors"><i
                     class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=manipolamuri6@gmail.com" target="_blank"
+            <a href="mailto:manipolamuri6@gmail.com"
+                onclick="handleEmail(event)"
                 class="text-slate-500 hover:text-primary transition-colors"><i class="fa-solid fa-envelope"></i></a>
         </div>
         <p class="text-slate-600 font-mono text-xs">

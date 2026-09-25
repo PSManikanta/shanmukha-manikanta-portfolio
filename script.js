@@ -1,3 +1,35 @@
+// =========================================
+// EMAIL HANDLER — mailto with Gmail fallback
+// =========================================
+// Tries native mailto: first (opens mail app on mobile).
+// If no mail client handles it within 1.5s, falls back to Gmail web compose.
+function handleEmail(e) {
+    e.preventDefault();
+    const email = 'manipolamuri6@gmail.com';
+    const mailtoUrl = 'mailto:' + email;
+    const gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + email;
+
+    // Track if the page loses focus (means mail app opened)
+    let mailOpened = false;
+
+    function onBlur() {
+        mailOpened = true;
+        window.removeEventListener('blur', onBlur);
+    }
+    window.addEventListener('blur', onBlur);
+
+    // Try opening mailto:
+    window.location.href = mailtoUrl;
+
+    // If nothing happened after 1.5s, fall back to Gmail web
+    setTimeout(() => {
+        window.removeEventListener('blur', onBlur);
+        if (!mailOpened) {
+            window.open(gmailUrl, '_blank');
+        }
+    }, 1500);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // =========================================
@@ -282,4 +314,40 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
         });
     });
+
+    // =========================================
+    // 10. SKILL CARDS — Staggered Reveal & Glow
+    // =========================================
+    const skillCards = document.querySelectorAll('.skill-card');
+
+    // Set per-card glow RGB variable from data-color attribute
+    skillCards.forEach(card => {
+        const rgb = card.getAttribute('data-color');
+        if (rgb) {
+            card.querySelector('.skill-card-inner').style.setProperty('--glow-rgb', rgb);
+        }
+    });
+
+    // Staggered entrance using IntersectionObserver
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const cards = entry.target.querySelectorAll('.skill-card');
+                cards.forEach((card, i) => {
+                    card.style.animationDelay = `${i * 0.08}s`;
+                    card.classList.add('skill-card-visible');
+                });
+                skillObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    const skillsSection = document.getElementById('skills');
+    if (skillsSection) {
+        // Pause animations until visible
+        skillCards.forEach(card => {
+            card.style.animationPlayState = 'paused';
+        });
+        skillObserver.observe(skillsSection);
+    }
 });
